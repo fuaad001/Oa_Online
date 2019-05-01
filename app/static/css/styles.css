@@ -17,12 +17,12 @@ body {
   text-decoration: none;
 }
 
-.subnav {
+.subnav, .subnav2 {
   float: left;
   overflow: hidden;
 }
 
-.subnav .subnavbtn {
+.subnav .subnavbtn , .subnav2 .subnavbtn2 {
   font-size: 16px;
   border: none;
   outline: none;
@@ -33,11 +33,11 @@ body {
   margin: 0;
 }
 
-.navbar a:hover, .subnav:hover .subnavbtn {
+.navbar a:hover, .subnav:hover .subnavbtn, .subnav2:hover .subnavbtn2 {
   background-color: red;
 }
 
-.subnav-content {
+.subnav-content, .subnav-content2 {
   display: none;
   position: absolute;
   left: 0;
@@ -46,7 +46,7 @@ body {
   z-index: 1;
 }
 
-.subnav-content a {
+.subnav-content a, .subnav-content2 a {
   float: left;
   color: white;
   text-decoration: none;
@@ -57,6 +57,34 @@ body {
   color: black;
 }
 
-.subnav:hover .subnav-content {
+.subnav:hover .subnav-content, .subnav2:hover .subnav-content2 {
   display: block;
+}
+
+.subnav2:hover .subnavbtn2, .subnav-content2 {
+  background-color: green;
+}
+
+.subnav2 a:hover {
+  background-color: green;
+  color: white;
+}
+
+.subnav-content2 a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav2 .subnavbtn2{
+  padding: 4px 16px;
+}
+
+form, form input{
+  text-align:center;
+}
+
+form .btn{
+  background-color: red;
+  color: white;
+  font-weight:bold;
 }
