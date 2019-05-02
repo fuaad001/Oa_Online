@@ -3,11 +3,11 @@
   <div class="subnav">
     <button class="subnavbtn">Learn About Marriages <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#types">Types</a>
-      <a href="#importance">Importance of the certificate</a>
-      <a href="#requirements">Requirements</a>
-      <a href="#process">Process</a>
-      <a href="#divorce">Divorce</a>
+      <a href="{{url_for('main.types')}}">Types</a>
+      <a href="{{url_for('main.importance')}}">Importance of the certificate</a>
+      <a href="{{url_for('main.requirements')}}">Requirements</a>
+      <a href="{{url_for('main.process')}}">Process</a>
+      <a href="{{url_for('main.divorce')}}">Divorce</a>
     </div>
   </div>
   <div class="subnav">
@@ -45,7 +45,7 @@
       <a href="#link3">Support and Custody</a>
     </div>
   </div>
-  <a href="#about">About Us</a>
+  <a href="{{url_for('auth.logout')}}">About Us</a>
   {% if current_user.is_authenticated %}
     <a href="#contact">{{current_user.husband_name|truncate(5)}} & {{current_user.wife_name|truncate(5)}}</a>
     <a href="{{url_for('auth.logout')}}">Sign out</a>
