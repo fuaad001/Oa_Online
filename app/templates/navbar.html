@@ -45,7 +45,7 @@
       <a href="{{url_for('main.divorce2')}}">File for Divorce Online</a>
     </div>
   </div>
-  <a href="#about">About Us</a>
+  <a href="{{url_for('auth.logout')}}">About Us</a>
   {% if current_user.is_authenticated %}
     <a href="#contact">{{current_user.husband_name|truncate(5)}} & {{current_user.wife_name|truncate(5)}}</a>
     <a href="{{url_for('auth.logout')}}">Sign out</a>
