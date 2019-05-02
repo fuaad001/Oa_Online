@@ -25,6 +25,7 @@ class User(UserMixin, db.Model):
     notices = db.relationship("Notice", backref= "user", lazy="dynamic")
     certificates = db.relationship("Certificate", backref= "user", lazy="dynamic")
     impediments = db.relationship("Impediment", backref= "user", lazy="dynamic")
+    agreements = db.relationship("Agreement", backref= "user", lazy="dynamic")
 
     @property
     def password(self):
@@ -113,4 +114,14 @@ class Impediment(db.Model):
     mm = db.Column(db.String(255))
     yy = db.Column(db.Integer)
     signature = db.Column(db.String(255))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
+class Agreement(db.Model):
+    __tablename__ = 'agreements'
+
+    id = db.Column(db.Integer, primary_key = True)
+    husband_vows = db.Column(db.String(255))
+    wife_vows = db.Column(db.String(255))
+    dowry_agreement = db.Column(db.String(255))
+    other_agreements = db.Column(db.String(255))
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))

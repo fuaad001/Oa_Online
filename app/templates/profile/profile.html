@@ -4,17 +4,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 marg2">
-      <h3 class="text-center"> {{current_user.husband_name}} & {{current_user.wife_name}} </h3>
+      <h3 class="text-center"> {{user.husband_name}} & {{user.wife_name}} </h3>
 
-      <!--Displaying user bio-->
-      {% if user.bio %}
-        <p> {{user.bio}}</p>
-      {%else%}
-        <p> {{user.username| capitalize}} has no bio </p>
-      {% endif %}
+      <p> <strong>Groom ID: </strong> <em> {{user.husband_ID}} </em></p>
+      <p> <strong>Bride ID: </strong> <em> {{user.wife_ID}} </em></p>
 
       {% if user == current_user %}
-      <a href="{{url_for('main.update_profile',uname=user.username)}}"> <button type="button" name="button" class="btn btn-warning"> Edit User Profile </button></a></a>
+      <a href="{{url_for('main.update_profile',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> Edit User Profile </button></a></a>
       {% endif %}
     </div>
   </div>

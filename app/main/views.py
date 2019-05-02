@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for, abort
 from . import main
 from .. import db, photos
 from flask_login import login_required, current_user
-from ..models import User, Notice, Certificate, Impediment
+from ..models import User, Notice, Certificate, Impediment, Agreement
 
 @main.route('/')
 def index():
@@ -342,3 +342,42 @@ def profile(user_id):
         abort(404)
 
     return render_template("profile/profile.html", user = user, certificate = certificate, notice = notice, impediment = impediment)
+
+@main.route('/user/<user_id>/update',methods = ['GET','POST'])
+@login_required
+def update_profile(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    if user is None:
+        abort(404)
+
+    form = UpdateProfile()
+    agreement = Agreement()
+
+    if form.validate_on_submit():
+        agreement.husband_vows = form.husband_vows.data
+        agreement.wife_vows = form.wife_vows.data
+        agreement.dowry_agreement = form.dowry_agreement.data
+        agreement.other_agreements = form.other_agreements.data
+        agreement.user_id = current_user.id
+
+
+        db.session.add(agreement)
+        db.session.commit()
+
+        return redirect(url_for('.profile',user_id=user.id))
+
+    return render_template('profile/update.html',form =form,user=user)
+
+@main.route('/user/<user_id>/update/pic',methods= ['POST'])
+@login_required
+def update_pic(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    if 'husband_photo' in request.files or 'wife_photo' in request.files:
+        filename = photos.save(request.files['husband_photo'])
+        path = f'photos/{filename}'
+        user.husband_pic_path = path
+        filename = photos.save(request.files['wife_photo'])
+        path = f'photos/{filename}'
+        user.wife_pic_path = path
+        db.session.commit()
+    return redirect(url_for('main.profile',user_id = user.id))
