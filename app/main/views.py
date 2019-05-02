@@ -94,8 +94,8 @@ def laws():
 
     return render_template('laws.html')
 
-@main.route('/marry/<type>/notice', methods=["GET", "POST"])
-def notice(type):
+@main.route('/marry/notice', methods=["GET", "POST"])
+def notice():
     '''
     View root page function that returns the notice page and its data
     '''
@@ -103,7 +103,7 @@ def notice(type):
     notice = Notice()
 
     if request.method == "POST":
-		district = request.form["district"]
+        district = request.form['district']
         spouse = request.form["spouse"]
         g_name = request.form["g_name"]
         g_condition = request.form["g_condition"]

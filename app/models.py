@@ -67,6 +67,7 @@ class Notice(db.Model):
 class Certificate(db.Model):
     __tablename__ = 'certificates'
 
+    id = db.Column(db.Integer, primary_key = True)
     g_date = db.Column(db.Date())
     g_name = db.Column(db.String(255))
     g_condition = db.Column(db.String(255))
@@ -93,6 +94,7 @@ class Certificate(db.Model):
 class Impediment(db.Model):
     __tablename__ = 'impediments'
 
+    id = db.Column(db.Integer, primary_key = True)
     spouse = db.Column(db.String(255))
     at = db.Column(db.String(255))
     in_input = db.Column(db.String(255))
