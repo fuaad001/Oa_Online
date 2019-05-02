@@ -1,0 +1,91 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+  <h1>SIGN MARRIAGE CERTIFICATE</h1>
+  <hr>
+  <br><br>
+  <h3>FIRST SCHEDULE -- <em>continued</em> </h3>
+  <div class="row">
+    <div class="col-md-4">
+      <h5> <strong>FORM No.5</strong> </h5>
+    </div>
+
+    <div class="col-md-4">
+      <p>[L.N 462/1963. Sch.]</p>
+      <h4>CERTIFICATE OF MARRIAGE</h4>
+    </div>
+
+    <div class="col-md-4">
+      <h5> <strong>(r.2)</strong> </h5>
+    </div>
+  </div>
+  <br>
+
+  <form class="marriage_form" action="{{url_for('main.certificate')}}" method="post" enctype = "multipart/form-data">
+    No. {{certificate.id}}
+    MARRIAGE solemnized at Oa_Online in the All District of the Region of Kenya.
+    <table>
+      <tr>
+        <th>When married</th>
+        <th>Name and surname</th>
+        <th>Age</th>
+        <th>Condition</th>
+        <th>Occupation</th>
+        <th>Residence at time of marriage</th>
+        <th>Father's name and surname</th>
+        <th>Father's occupation</th>
+      </tr>
+      <tr>
+        <td> <input type="date" name="g_date"> </td>
+        <td> <input type="text" name="g_name" placeholder="bridegroom"> </td>
+        <td> <input type="text" name="g_age"> </td>
+        <td> <input type="text" name="g_condition" placeholder="Bachelor, widower or divorced person."> </td>
+        <td> <input type="text" name="g_occupation" placeholder="Farmer (or as the case may be). "> </td>
+        <td> <input type="text" name="g_residence" placeholder="Mombasa (or as the case may be). "> </td>
+        <td> <input type="text" name="g_fname"> </td>
+        <td> <input type="text" name="g_foccupation"> </td>
+      </tr>
+      <tr>
+        <td> <input type="date" name="b_date"> </td>
+        <td> <input type="text" name="b_name" placeholder="bridegroom"> </td>
+        <td> <input type="text" name="b_age"> </td>
+        <td> <input type="text" name="b_condition" placeholder="Bachelor, widower or divorced person."> </td>
+        <td> <input type="text" name="b_occupation" placeholder="Farmer (or as the case may be). "> </td>
+        <td> <input type="text" name="b_residence" placeholder="Mombasa (or as the case may be). "> </td>
+        <td> <input type="text" name="b_fname"> </td>
+        <td> <input type="text" name="b_foccupation"> </td>
+      </tr>
+    </table>
+    <hr>
+    <p>Married in the Oa_Online <span>by Registrar's Certificate</span> by (or before) me <em>Oa_Online</em> </p>
+    <p class="text-center">By License</p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+            This Marriage was solemnized between:
+          </div>
+          <div class="col-md-6">
+            <input type="text" name="groom">
+            <input type="text" name="bride">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+            In the presence of:
+          </div>
+          <div class="col-md-6">
+            <input type="text" name="witness1">
+            <input type="text" name="witness2">
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p>Entered this <input type="date" name="date"> at the District Registry of Marriages at Oa_Online</p>
+    <button type="submit" class="btn btn-danger"></button>
+  </form>
+</div>
+{% endblock%}

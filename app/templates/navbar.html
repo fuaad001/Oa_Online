@@ -3,11 +3,11 @@
   <div class="subnav">
     <button class="subnavbtn">Learn About Marriages <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#types">Types</a>
-      <a href="#importance">Importance of the certificate</a>
-      <a href="#requirements">Requirements</a>
-      <a href="#process">Process</a>
-      <a href="#divorce">Divorce</a>
+      <a href="{{url_for('main.types')}}">Types</a>
+      <a href="{{url_for('main.importance')}}">Importance of the certificate</a>
+      <a href="{{url_for('main.requirements')}}">Requirements</a>
+      <a href="{{url_for('main.process')}}">Process</a>
+      <a href="{{url_for('main.divorce')}}">Divorce</a>
     </div>
   </div>
   <div class="subnav">
@@ -16,7 +16,7 @@
       <div class="subnav2">
         <button class="subnavbtn2"><a href="#bring">Civil</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
-          <a href="#types">Create Notice</a>
+          <a href="{{url_for('main.notice', type=civil)}}">Create Notice</a>
           <a href="#importance">Conduct Marriage</a>
         </div>
       </div>
@@ -31,7 +31,7 @@
       <div class="subnav2">
         <button class="subnavbtn2"><a href="#bring">Customary</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
-          <a href="#types">Create Notice</a>
+          <a href="{{url_for('main.notice', type=customary)}}">Create Notice</a>
           <a href="#importance">Conduct Marriage</a>
         </div>
       </div>
@@ -40,9 +40,9 @@
   <div class="subnav">
     <button class="subnavbtn">Divorce <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#link1">Laws and Requirements</a>
-      <a href="#link2">Divorce Process</a>
-      <a href="#link3">Support and Custody</a>
+      <a href="{{url_for('main.laws')}}">Laws and Requirements</a>
+      <a href="{{url_for('main.process2')}}">Divorce Process</a>
+      <a href="{{url_for('main.divorce2')}}">File for Divorce Online</a>
     </div>
   </div>
   <a href="#about">About Us</a>

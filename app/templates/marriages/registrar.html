@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+  <h1>VIEW REGISTRAR'S CERTIFICATE</h1>
+  <hr>
+  <br><br>
+  <div class="row">
+    <div class="col-md-6">
+      <h5> <strong>FORM No.3</strong> </h5>
+    </div>
+
+    <div class="col-md-6">
+      <h5> <strong>(r.4)</strong> </h5>
+    </div>
+  </div>
+  <h3>FORM OF ATTESTATION</h3>
+
+  <p>I, Oa_Online,  Registrar of Marriages for the All District of Kenya, do hereby caertify that on the {{notice.dd}} day of {{notice.mm}} 20{{notice.yy}}, notice was duly entered in the marriage notice book of this district of the marriage intended between the parties herein named and described at {{notice.id}} in Kenya, such notice being delivered under the hand of {{notice.spouse}} one of the parties, that is to say— </p>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Condition</th>
+      <th>Occupation</th>
+      <th>Age</th>
+      <th>Residence</th>
+      <th>Consent, if any, and by whom given</th>
+    </tr>
+    <tr>
+      <td> {{notice.g_name}} </td>
+      <td> {{notice.g_condition}} </td>
+      <td> {{notice.g_occupation}} </td>
+      <td> {{notice.g_age}} </td>
+      <td> {{notice.g_residence}} </td>
+      <td> {{notice.g_consent}} </td>
+    </tr>
+    <tr>
+      <td> {{notice.b_name}} </td>
+      <td> {{notice.b_condition}} </td>
+      <td> {{notice.b_occupation}} </td>
+      <td> {{notice.b_age}} </td>
+      <td> {{notice.b_residence}} </td>
+      <td> {{notice.b_consent}} </td>
+    </tr>
+  </table>
+
+  <p>Date of notice entered, {{notice.dd}} day of {{notice.mm}} 20{{notice.yy}}. Date of certificate given,{{notice.dd}} day of {{notice.mm}} 20{{notice.yy}}. No caveat has been entered against the issue of this certificate.</p>
+  <p>(Signed) </p>
+  <em>Oa_Online</em>
+  <p>Registrar of Marriages</p>
+  <strong>NOTE.—This certificate will be void unless the marriage is solemnized on or before the 01 day of 01, 2020</strong>
+  <br><br>
+  <p>Signed: Oa_Online </p>
+  <p>(Designation) E-Kenya Marriage app </p>
+</div>
+{% endblock%}

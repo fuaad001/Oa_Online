@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+  <h1>CREATE PUBLIC NOTICE</h1>
+  <hr>
+  <br><br>
+  <h3>FIRST SCHEDULE</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <h5> <strong>FORM No.1</strong> </h5>
+    </div>
+
+    <div class="col-md-6">
+      <h5> <strong>(r.2)</strong> </h5>
+    </div>
+  </div>
+  <h4>NOTICE OF MARRIAGE</h4>
+  <form class="notice_form" action="{{url_for('main.notice')}}" method="post" enctype = "multipart/form-data">
+    <p>To the Registrar of Marriages for the <input type="text" name="district" placeholder="district"> District of Kenya. </p>
+    <p>I hereby give you notice that a marriage is intended to be entered into within three months from the date hereof between me, the undersigned and the other party herein named at <input type="text" name="spouse" placeholder="spouse"> in Kenya. </p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Condition</th>
+        <th>Occupation</th>
+        <th>Age</th>
+        <th>Residence</th>
+        <th>Consent, if any, and by whom given</th>
+      </tr>
+      <tr>
+        <td> <input type="text" name="g_name" placeholder="bridegroom"> </td>
+        <td> <input type="text" name="g_condition" placeholder="Bachelor, widower or divorced person."> </td>
+        <td> <input type="text" name="g_occupation" placeholder="Farmer (or as the case may be). "> </td>
+        <td> <input type="text" name="g_age"> </td>
+        <td> <input type="text" name="g_residence" placeholder="Mombasa (or as the case may be). "> </td>
+        <td> <input type="text" name="g_consent"> </td>
+      </tr>
+      <tr>
+        <td> <input type="text" name="b_name" placeholder="bride"> </td>
+        <td> <input type="text" name="b_condition" placeholder="Bachelor, widower or divorced person."> </td>
+        <td> <input type="text" name="b_occupation" placeholder="Teacher (or as the case may be). "> </td>
+        <td> <input type="text" name="b_age"> </td>
+        <td> <input type="text" name="b_residence" placeholder="Nairobi (or as the case may be). "> </td>
+        <td> <input type="text" name="b_consent"> </td>
+      </tr>
+    </table>
+    <p>Witness my hand, this <input type="text" placeholder="dd" name="dd">  day of <input type="text" placeholder="mm" name="mm"> 20 <input type="text" placeholder="yy" name="yy"> </p>
+
+    <br><br>
+    <p>Signature <input type="text" placeholder="full name or electronic signature" name='signature'> </p>
+    <button type="submit" class="btn btn-danger"></button>
+  </form>
+</div>
+{% endblock%}
