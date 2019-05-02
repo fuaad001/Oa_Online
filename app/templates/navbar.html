@@ -1,5 +1,5 @@
 <div class="navbar">
-  <a href="#home">Home</a>
+  <a href="{{url_for('main.index')}}">Home</a>
   <div class="subnav">
     <button class="subnavbtn">Learn About Marriages <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
@@ -17,22 +17,22 @@
         <button class="subnavbtn2"><a href="#bring">Civil</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
           <a href="{{url_for('main.notice')}}">Create Notice</a>
-          <a href="#importance">Conduct Marriage</a>
+          <a href="{{url_for('main.civil')}}">Conduct Marriage</a>
         </div>
       </div>
       <div class="subnav2">
         <button class="subnavbtn2"><a href="#bring">Religious</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
-          <a href="#types">Christian Union</a>
-          <a href="#importance">Muslim Union</a>
-          <a href="#importance">Hindu Union</a>
+          <a href="{{url_for('main.christian')}}">Christian Union</a>
+          <a href="{{url_for('main.muslim')}}">Muslim Union</a>
+          <a href="{{url_for('main.hindu')}}">Hindu Union</a>
         </div>
       </div>
       <div class="subnav2">
         <button class="subnavbtn2"><a href="#bring">Customary</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
           <a href="{{url_for('main.notice')}}">Create Notice</a>
-          <a href="#importance">Conduct Marriage</a>
+          <a href="{{url_for('main.customary')}}">Conduct Marriage</a>
         </div>
       </div>
     </div>
@@ -45,9 +45,9 @@
       <a href="{{url_for('main.divorce2')}}">File for Divorce Online</a>
     </div>
   </div>
-  <a href="{{url_for('auth.logout')}}">About Us</a>
+  <a href="{{url_for('main.about')}}">About Us</a>
   {% if current_user.is_authenticated %}
-    <a href="#contact">{{current_user.husband_name|truncate(5)}} & {{current_user.wife_name|truncate(5)}}</a>
+    <a href="{{url_for('main.profile',user_id=current_user.id)}}">{{current_user.husband_name|truncate(5)}} & {{current_user.wife_name|truncate(5)}}</a>
     <a href="{{url_for('auth.logout')}}">Sign out</a>
   {% else %}
     <a href="{{url_for('auth.login')}}">Login</a>

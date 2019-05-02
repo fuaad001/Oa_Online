@@ -270,3 +270,75 @@ def impediment():
         return redirect(url_for('.index'))
 
     return render_template('marriages/impediment.html')
+
+@main.route('/civil_marriage')
+def civil():
+    '''
+    View root page function that returns the civil wedding page and its data
+    '''
+
+    title = 'Civil wedding'
+
+    return render_template('marriages/civil.html')
+
+@main.route('/custoamry_marriage')
+def customary():
+    '''
+    View root page function that returns the customary wedding page and its data
+    '''
+
+    title = 'Customary wedding'
+
+    return render_template('marriages/customary.html')
+
+@main.route('/muslim_marriage')
+def muslim():
+    '''
+    View root page function that returns the muslim wedding page and its data
+    '''
+
+    title = 'Muslim wedding'
+
+    return render_template('marriages/muslim.html')
+
+@main.route('/christian_marriage')
+def christian():
+    '''
+    View root page function that returns the christian wedding page and its data
+    '''
+
+    title = 'Christian wedding'
+
+    return render_template('marriages/christian.html')
+
+@main.route('/hindu_marriage')
+def hindu():
+    '''
+    View root page function that returns the hindu wedding page and its data
+    '''
+
+    title = 'Hindu wedding'
+
+    return render_template('marriages/hindu.html')
+
+@main.route('/About_us')
+def about():
+    '''
+    View root page function that returns the about us page and its data
+    '''
+
+    title = 'About us'
+
+    return render_template('about.html')
+
+@main.route('/user/<user_id>')
+def profile(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    certificate = Certificate.query.filter_by(user_id = user.id)
+    notice = Notice.query.filter_by(user_id = user.id)
+    impediment = Impediment.query.filter_by(user_id = user.id)
+
+    if user is None:
+        abort(404)
+
+    return render_template("profile/profile.html", user = user, certificate = certificate, notice = notice, impediment = impediment)
