@@ -1,56 +1,56 @@
-<div class="navbar">
-  <a href="{{url_for('main.index')}}">Home</a>
+<div class="navbar" >
+  <a href="{{url_for('main.index')}}" style="font-size:25px;">Home</a>
   <div class="subnav">
-    <button class="subnavbtn">Learn About Marriages <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn" style="font-size:25px;">Learn About Marriages <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="{{url_for('main.types')}}">Types</a>
-      <a href="{{url_for('main.importance')}}">Importance of the certificate</a>
-      <a href="{{url_for('main.requirements')}}">Requirements</a>
-      <a href="{{url_for('main.process')}}">Process</a>
-      <a href="{{url_for('main.divorce')}}">Divorce</a>
+      <a href="{{url_for('main.types')}}" style="font-size:25px;">Types</a>
+      <a href="{{url_for('main.importance')}}" style="font-size:25px;">Importance of the certificate</a>
+      <a href="{{url_for('main.requirements')}}" style="font-size:25px;">Requirements</a>
+      <a href="{{url_for('main.process')}}" style="font-size:25px;">Process</a>
+      <a href="{{url_for('main.divorce')}}" style="font-size:25px;">Divorce</a>
     </div>
   </div>
   <div class="subnav">
-    <button class="subnavbtn">Proceed to Marry <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn" style="font-size:25px;">Proceed to Marry <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
       <div class="subnav2">
-        <button class="subnavbtn2"><a href="#bring">Civil</a><i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn2"><a href="#bring" style="font-size:25px;">Civil</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
-          <a href="{{url_for('main.notice')}}">Create Notice</a>
-          <a href="{{url_for('main.civil')}}">Conduct Marriage</a>
+          <a href="{{url_for('main.notice')}}" style="font-size:25px;">Create Notice</a>
+          <a href="{{url_for('main.civil')}}" style="font-size:25px;">Conduct Marriage</a>
         </div>
       </div>
       <div class="subnav2">
-        <button class="subnavbtn2"><a href="#bring">Religious</a><i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn2"><a href="#bring" style="font-size:25px;">Religious</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
-          <a href="{{url_for('main.christian')}}">Christian Union</a>
-          <a href="{{url_for('main.muslim')}}">Muslim Union</a>
-          <a href="{{url_for('main.hindu')}}">Hindu Union</a>
+          <a href="{{url_for('main.christian')}}" style="font-size:25px;;">Christian Union</a>
+          <a href="{{url_for('main.muslim')}}" style="font-size:25px;">Muslim Union</a>
+          <a href="{{url_for('main.hindu')}}" style="font-size:25px;;">Hindu Union</a>
         </div>
       </div>
       <div class="subnav2">
-        <button class="subnavbtn2"><a href="#bring">Customary</a><i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn2"><a href="#bring" style="font-size:25px;">Customary</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
-          <a href="{{url_for('main.notice')}}">Create Notice</a>
-          <a href="{{url_for('main.customary')}}">Conduct Marriage</a>
+          <a href="{{url_for('main.notice')}}" style="font-size:25px;">Create Notice</a>
+          <a href="{{url_for('main.customary')}}" style="font-size:25px;">Conduct Marriage</a>
         </div>
       </div>
     </div>
   </div>
   <div class="subnav">
-    <button class="subnavbtn">Divorce <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn" style="font-size:25px;">Divorce <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="{{url_for('main.laws')}}">Laws and Requirements</a>
-      <a href="{{url_for('main.process2')}}">Divorce Process</a>
-      <a href="{{url_for('main.divorce2')}}">File for Divorce Online</a>
+      <a href="{{url_for('main.laws')}}" style="font-size:25px;">Laws and Requirements</a>
+      <a href="{{url_for('main.process2')}} " style="font-size:25px;">Divorce Process</a>
+      <a href="{{url_for('main.divorce2')}}" style="font-size:25px;">File for Divorce Online</a>
     </div>
   </div>
-  <a href="{{url_for('main.about')}}">About Us</a>
+  <a href="{{url_for('main.about')}}" style="font-size:25px;">About Us</a>
   {% if current_user.is_authenticated %}
     <a href="{{url_for('main.profile',user_id=current_user.id)}}">{{current_user.husband_name|truncate(5)}} & {{current_user.wife_name|truncate(5)}}</a>
-    <a href="{{url_for('auth.logout')}}">Sign out</a>
+    <a href="{{url_for('auth.logout')}}" style="font-size:25px;">Sign out</a>
   {% else %}
-    <a href="{{url_for('auth.login')}}">Login</a>
-    <a href="{{url_for('auth.register')}}">Register Couple</a>
+    <a href="{{url_for('auth.login')}}" style="font-size:25px;">Login</a>
+    <a href="{{url_for('auth.register')}}" style="font-size:25px;">Register Couple</a>
   {%endif%}
 </div>
