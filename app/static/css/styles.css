@@ -1,9 +1,11 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kaushan Script', cursive;
   margin: 0;
-  background-image:url('http://admin.jamaicaexperiences.com//img/domains/959801708/hiking-in-jamaica,--blue-mountain-peak-in-jamaica,-jamaican-blue-mountain-coffee,-things-to-do-in-jamaica,-places-to-go-in-jamaica.jpg');
+  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZIBSh6v7W27au_cQpi39dVO9gCrXXgXt3D9asmlzdFBkfLdhC');
   background-size: cover;
   background-repeat:no-repeat;
+  font-family: 'Kaushan Script', cursive;
+  font-size:30px;
 }
 
 .navbar {
@@ -37,14 +39,14 @@ body {
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn, .subnav2:hover .subnavbtn2 {
-  background-color: red;
+  background-color: purple;
 }
 
 .subnav-content, .subnav-content2 {
   display: none;
   position: absolute;
   left: 0;
-  background-color: red;
+  background-color: purple;
   width: 100%;
   z-index: 1;
 }
@@ -65,11 +67,11 @@ body {
 }
 
 .subnav2:hover .subnavbtn2, .subnav-content2 {
-  background-color: green;
+  background-color: rgb(175, 127, 157);
 }
 
 .subnav2 a:hover {
-  background-color: green;
+  background-color:rgb(175, 127, 157);
   color: white;
 }
 
@@ -106,5 +108,25 @@ form .btn{
     padding-right: 10%;
     text-align: center;
   }
+}
 
+.side-line{
+  float:left;
+  clear:right;
+}
+.move-right{
+  float:right;
+  margin-left:500px;
+}
+h1,h2,h3{
+  text-align:center;
+  color:purple;
+  text-decoration:underline;
+}
+#turn>a:hover{
+  color:purple;
+  box-shadow:5px 5px 5px purple;
+}
+a:hover> img{
+  box-shadow:5px 5px 5px purple;
 }
