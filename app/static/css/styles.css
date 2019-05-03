@@ -1,24 +1,49 @@
 body {
-  font-family: 'Kaushan Script', cursive;
   margin: 0;
   background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZIBSh6v7W27au_cQpi39dVO9gCrXXgXt3D9asmlzdFBkfLdhC');
   background-size: cover;
   background-repeat:no-repeat;
-  font-family: 'Kaushan Script', cursive;
+  font-family: 'ZCOOL XiaoWei', serif;
   font-size:30px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 1.5%;
+}
+
+table{
+  margin-bottom: 1%;
+}
+
+.card-header h1{
+  color: white;
+}
+
+.card-header{
+  background-color: maroon;
+}
+
+.card-group{
+  margin-top: 2%;
+  border: 1px solid grey;
+  box-shadow: 3px 3px 3px grey;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .navbar {
   overflow: visible;
-  background-color: #333;
+  background-color: black;
 }
 
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: large;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 14px;
   text-decoration: none;
 }
 
@@ -28,7 +53,7 @@ body {
 }
 
 .subnav .subnavbtn , .subnav2 .subnavbtn2 {
-  font-size: 16px;
+  font-size: large;
   border: none;
   outline: none;
   color: white;
@@ -39,14 +64,14 @@ body {
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn, .subnav2:hover .subnavbtn2 {
-  background-color: purple;
+  background-color: maroon;
 }
 
 .subnav-content, .subnav-content2 {
   display: none;
   position: absolute;
   left: 0;
-  background-color: purple;
+  background-color: maroon;
   width: 100%;
   z-index: 1;
 }
@@ -67,11 +92,11 @@ body {
 }
 
 .subnav2:hover .subnavbtn2, .subnav-content2 {
-  background-color: rgb(175, 127, 157);
+  background-color: brown;
 }
 
 .subnav2 a:hover {
-  background-color:rgb(175, 127, 157);
+  background-color:brown;
   color: white;
 }
 
@@ -94,6 +119,39 @@ form .btn{
   font-weight:bold;
 }
 
+.side-line{
+  float:left;
+  clear:right;
+}
+.move-right{
+  float:right;
+  margin-left:500px;
+}
+h1,h2,h3{
+  text-align:center;
+  color:maroon;
+}
+
+.title{
+  text-shadow: 5px 5px 5px white;
+}
+
+#turn h1{
+  text-shadow: none;
+}
+
+#turn>a:hover{
+  color:purple;
+  box-shadow:5px 5px 5px grey;
+}
+a:hover> img{
+  box-shadow:5px 5px 5px grey;
+}
+
+.bottom h2{
+  font-size: large;
+}
+
 @media only screen and (min-width: 812px) {
 
   .marg{
@@ -108,25 +166,20 @@ form .btn{
     padding-right: 10%;
     text-align: center;
   }
-}
+  .image{
+    width: 24%;
+    height: 200px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .bottom{
+    padding:1%;
+  }
+  #turn{
+    margin-left: 18%;
+  }
+  #turn img{
+    height: 85px
+  }
 
-.side-line{
-  float:left;
-  clear:right;
-}
-.move-right{
-  float:right;
-  margin-left:500px;
-}
-h1,h2,h3{
-  text-align:center;
-  color:purple;
-  text-decoration:underline;
-}
-#turn>a:hover{
-  color:purple;
-  box-shadow:5px 5px 5px purple;
-}
-a:hover> img{
-  box-shadow:5px 5px 5px purple;
 }
