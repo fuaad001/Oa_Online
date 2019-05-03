@@ -36,24 +36,24 @@
         <th>Father's occupation</th>
       </tr>
       <tr>
-        <td> <input type="date" name="g_date"> </td>
-        <td> <input type="text" name="g_name" placeholder="bridegroom"> </td>
-        <td> <input type="text" name="g_age"> </td>
-        <td> <input type="text" name="g_condition" placeholder="Bachelor, widower or divorced person."> </td>
-        <td> <input type="text" name="g_occupation" placeholder="Farmer (or as the case may be). "> </td>
-        <td> <input type="text" name="g_residence" placeholder="Mombasa (or as the case may be). "> </td>
-        <td> <input type="text" name="g_fname"> </td>
-        <td> <input type="text" name="g_foccupation"> </td>
+        <td> {{certificate.g_date}} </td>
+        <td> {{certificate.g_name}} </td>
+        <td> {{certificate.g_age}} </td>
+        <td> {{certificate.g_condition}} </td>
+        <td> {{certificate.g_occupation}} </td>
+        <td> {{certificate.g_residence}} </td>
+        <td> {{certificate.g_fname}} </td>
+        <td> {{certificate.g_foccupation}} </td>
       </tr>
       <tr>
-        <td> <input type="date" name="b_date"> </td>
-        <td> <input type="text" name="b_name" placeholder="bridegroom"> </td>
-        <td> <input type="text" name="b_age"> </td>
-        <td> <input type="text" name="b_condition" placeholder="Bachelor, widower or divorced person."> </td>
-        <td> <input type="text" name="b_occupation" placeholder="Farmer (or as the case may be). "> </td>
-        <td> <input type="text" name="b_residence" placeholder="Mombasa (or as the case may be). "> </td>
-        <td> <input type="text" name="b_fname"> </td>
-        <td> <input type="text" name="b_foccupation"> </td>
+        <td> {{certificate.b_date}} </td>
+        <td> {{certificate.b_name}} </td>
+        <td> {{certificate.b_age}} </td>
+        <td> {{certificate.b_condition}} </td>
+        <td> {{certificate.b_occupation}} </td>
+        <td> {{certificate.b_residence}} </td>
+        <td> {{certificate.b_fname}} </td>
+        <td> {{certificate.b_foccupation}} </td>
       </tr>
     </table>
     <hr>
@@ -66,8 +66,8 @@
             This Marriage was solemnized between:
           </div>
           <div class="col-md-6">
-            <input type="text" name="groom">
-            <input type="text" name="bride">
+            {{certificate.groom}}
+            {{certificate.bride}}
           </div>
         </div>
       </div>
@@ -77,14 +77,14 @@
             In the presence of:
           </div>
           <div class="col-md-6">
-            <input type="text" name="witness1">
-            <input type="text" name="witness2">
+            {{certificate.witness1}}
+            {{certificate.witness2}}
           </div>
         </div>
       </div>
     </div>
     <hr>
-    <p>Entered this <input type="date" name="date"> at the District Registry of Marriages at Oa_Online</p>
+    <p>Entered this {{certificate.date}} at the District Registry of Marriages at Oa_Online</p>
     <button type="submit" class="btn btn-danger">Submit</button>
   </form>
 </div>

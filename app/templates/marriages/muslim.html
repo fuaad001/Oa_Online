@@ -2,7 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
-<div class="container">
+<div class="container" style="font-size:large;">
   <div class="">
     {{wtf.quick_form(form)}}
     <a href="{{url_for('main.certificate')}}"> <button type="button" class="btn btn-success">Go to sign certiicate</button> </a>

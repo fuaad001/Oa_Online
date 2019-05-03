@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container" style="font-size:large;">
+  <h1>CREATE IMPEDIMENT FORM</h1>
+  <hr>
+  <br><br>
+  <div class="row">
+    <div class="col-md-3">
+      <h5> <strong>FORM No.7</strong> </h5>
+    </div>
+
+    <div class="col-md-9">
+      <p>[L.N. 269/1966, s. 2.] </p>
+      <h4>APPLICATION FOR CERTIFICATE OF NO IMPEDIMENT TO MARRIAGE</h4>
+    </div>
+  </div>
+  <br>
+
+  <form class="impediment_form" action="{{url_for('main.impediment')}}" method="post" enctype = "multipart/form-data">
+    <p>To the Registrar of Marriages for <em>Oa_Online</em> WHEREAS I wish to marry <input type="text" name="spouse" placeholder="full Name of other Party">
+    <p>at <input type="text" name="at"> </p>
+    <p>in <input type="text" name="in_input" placeholder="name of foreign country or place"> </p>
+    <p>NOW I hereby apply for the certificate of the Registrar-General that he is not aware of any legal impediment to the intended marriage.</p>
+    <p>AND I hereby declare that I am not already married to any person whether under customary law or otherwise howsoever.</p>
+    <p>My particulars are as follows:</p>
+
+    <ol>
+      <li>Surname <input type="text" name="surname"> </li>
+      <li>Christian Name and Forename <input type="text" name="forename"> </li>
+      <li>Country and Place of Birth (giving where applicable sublocation, location and district) <input type="text" name="country"> </li>
+      <li>Date of Birth <input type="date" name="date"> </li>
+      <li>Father’s full Name and Address (giving where applicable sublocation, location and district) <input type="text" name="father"> </li>
+      <li>Sex <input type="text" name="sex"> </li>
+      <li>Race <input type="text" name="race"> </li>
+      <li>Religion <input type="text" name="religion"> </li>
+      <li>Last Residence in Kenya <input type="text" name="residence"> </li>
+      <li>Occupation <input type="text" name="occupation"> </li>
+      <li>Condition, e.g., bachelor, widower, divorced person <input type="text" name="condition"> </li>
+    </ol>
+
+    <p>Witness my hand, this <input type="text" placeholder="dd" name="dd">  day of <input type="text" placeholder="mm" name="mm"> 20 <input type="text" placeholder="yy" name="yy"> </p>
+
+    <br><br>
+    <p>Signature <input type="text" placeholder="full name or electronic signature" name="signature"> </p>
+
+    <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
+{% endblock%}

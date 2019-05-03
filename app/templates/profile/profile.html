@@ -1,9 +1,9 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div class="container">
+<div class="container" style="font-size:xx-large;">
   <div class="row">
-    <div class="col-md-4 marg2">
+    <div class="col-md-3 marg2">
       <h3 class="text-center"> {{user.husband_name}} & {{user.wife_name}} </h3>
 
       <p> <strong>Groom ID: </strong> <em> {{user.husband_ID}} </em></p>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-md-5 marg3">
-      <div class="pictures" style="display: flex;">
+      <div class="pictures" style="width: 100%;">
         {% if user.husband_pic_path %}
           <img src="{{url_for('static',filename=user.husband_pic_path)}}" alt="" class="img-thumbnail">
         {%else%}
@@ -30,12 +30,17 @@
       </div>
   </div>
 
-  <div class="col-md-3 marg">
+  <div class="col-md-4 marg">
     <a href="{{url_for('main.registrar',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> View registrar certificate</button></a>
     <br><br>
     <a href="{{url_for('main.impediment',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> Fill impediment form</button></a>
     <br><br>
     <a href="{{url_for('main.attestation',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> View attestation certificate</button></a>
+    <br><br>
+    <a href="{{url_for('main.certificate2',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> View Official marriage certificate</button></a>
+    <br><br>
+    <a href="{{url_for('main.impediment2',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> View Impediment certificate</button></a>
+    <br><br>
   </div>
 
   </div>

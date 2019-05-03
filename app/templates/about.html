@@ -1,22 +1,57 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div>
-    <h1>WHO WE ARE</h1>
-    <p>The world is digitalising in every aspect and the best being up to date with current affairs is healthy as per the circumnstances</p>
+<div class="container" style="font-size:large; text-align: center">
+  <div class="card">
+    <div class="card-header">
+      <h1>WHO WE ARE</h1>
+    </div>
+    <div class="card-body">
+      <p>The world is digitalising in every aspect and the best being up to date with current affairs is healthy as per the circumnstances</p>
+    </div>
+  </div>
     <br>
     <p>That is where we come in.Young as we may be we ensure no aspect brings us down.</p>
     <ul>
-        <li>Hussein Fuaad</li>
-        <img src="https://cdn.pixabay.com/photo/2012/04/11/16/16/man-28739_960_720.png" height=300>
-        <li>Lilian Muthoni</li>
-        <img src="http://www.clker.com/cliparts/7/6/7/a/11954448741913331555FEN_bedroom_eyes.svg.hi.png" height=300>
-        <li>Emma Kibore</li>
-        <img src="https://banner2.kisspng.com/20180629/bov/kisspng-natalie-portman-clint-barton-black-widow-annihilat-natalie-portman-5b3604f21a5148.7334960115302668661078.jpg" height=300>
-        <li>Eddy Yonnie</li>
-        <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2018/1/1/0/0_cc0c9ee4-0311-41c5-84d5-87c1d24a6202_759_1012.jpg" height=300>
-    
+      <div style="display: flex; width:100%;">
+        <div class="team">
+          <li>Hussein Fuaad</li>
+          <img src="https://cdn.pixabay.com/photo/2012/04/11/16/16/man-28739_960_720.png" height=260>
+          <hr>
+        </div>
+
+        <div class="team">
+          <li>Lilian Muthoni</li>
+          <img src="http://www.clker.com/cliparts/7/6/7/a/11954448741913331555FEN_bedroom_eyes.svg.hi.png" height=260>
+          <hr>
+        </div>
+
+        <div class="team">
+          <li>Emma Kibore</li>
+          <img src="https://banner2.kisspng.com/20180629/bov/kisspng-natalie-portman-clint-barton-black-widow-annihilat-natalie-portman-5b3604f21a5148.7334960115302668661078.jpg" height=260>
+          <hr>
+        </div>
+
+        <div class="team">
+          <li>Eddy Yonnie</li>
+          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2018/1/1/0/0_cc0c9ee4-0311-41c5-84d5-87c1d24a6202_759_1012.jpg" height=260>
+          <hr>
+        </div>
+      </div>
+
     </ul>
     <p>Empowered by a mega-technical institution as well as our grit ,we are the face of tommorrow.</p>
+
+    <div class="bottom" style="background-color:black;">
+       <h1 style="text-decoration:none;color:white;">This is your website for joining with your one and only</h1>
+
+       <div style="display:flex;flex-direction:row;" id="turn">
+       <a href="https://www.instagram.com/accounts/login/"><img src="http://img.twitrer.com/upload/4/49/44928967a6e7047e98528c0456f07d19_thumb.jpg" height=100 style="padding:12px;margin-left:200px;"> </a>
+       <a href="https://twitter.com/login"><img src="http://alejandravitatienda.com/wp-content/uploads/2014/07/Alejandra-Vita-twitter-negro.png" height=100 style="padding:12px;"> </a>
+       <a href="https://web.facebook.com/campaign/landing.php?&campaign_id=1654945166&extra_1=s%7Cc%7C318722299427%7Cb%7Cwww%20sign%20in%20com%7C&placement&creative=318722299427&keyword=www%20sign%20in%20com&partner_id=googlesem&extra_2=campaignid%3D1654945166%26adgroupid%3D64292160235%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D1t1%26target%3D%26targetid%3Dkwd-295851760689%26loc_physical_ms%3D9076854%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAjwqqrmBRAAEiwAdpDXtLGApl-6R1jhD2OWB4RDCU3z19ChMNb3JzIszWW8GCxS027Z6yGqrhoCxtMQAvD_BwE&_rdc=1&_rdr"><img src="http://www.riskprotect.net/img/fb.png" height=100 style="padding:12px;"> </a>
+       <a href="https://www.messenger.com/"><img src="https://energeticacoop.es/images/iconos/email_byn_blanco.png" height=100 style="padding:12px;"> </a>
+       </div>
+           <h2 style="text-decoration:none;color:white;">Contacts us</h2>
+       </div>
 </div>
 {% endblock %}

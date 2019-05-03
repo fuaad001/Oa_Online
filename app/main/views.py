@@ -497,3 +497,23 @@ def hindu(user_id):
     title = 'Hindu Marriage'
 
     return render_template('marriages/hindu.html',form =form,user=user, title = title)
+
+@main.route('/user/<user_id>/marriage_certificate')
+def certificate2(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    certificate = Certificate.query.filter_by(user_id = user.id)
+
+    if user is None:
+        abort(404)
+
+    return render_template("marriages/certificate2.html", user = user, certificate = certificate)
+
+@main.route('/user/<user_id>/impediment_certificate')
+def impediment2(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    impediment = Impediment.query.filter_by(user_id = user.id)
+
+    if user is None:
+        abort(404)
+
+    return render_template("marriages/impediment2.html", user = user, impediment = impediment)
