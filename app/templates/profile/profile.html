@@ -10,9 +10,34 @@
       <p> <strong>Bride ID: </strong> <em> {{user.wife_ID}} </em></p>
 
       {% if user == current_user %}
-      <a href="{{url_for('main.update_profile',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> Edit User Profile </button></a></a>
+      <a href="{{url_for('main.update_profile',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-success"> Edit Couple's Profile </button></a>
       {% endif %}
     </div>
+
+    <div class="col-md-5 marg3">
+      <div class="pictures" style="display: flex;">
+        {% if user.husband_pic_path %}
+          <img src="{{url_for('static',filename=user.husband_pic_path)}}" alt="" class="img-thumbnail">
+        {%else%}
+          <p>No Husband's picture</p>
+        {% endif %}
+
+        {% if user.wife_pic_path %}
+          <img src="{{url_for('static',filename=user.wife_pic_path)}}" alt="" class="img-thumbnail">
+        {%else%}
+          <p>No Wife's picture</p>
+        {% endif %}
+      </div>
+  </div>
+
+  <div class="col-md-3 marg">
+    <a href="{{url_for('main.registrar',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> View registrar certificate</button></a>
+    <br><br>
+    <a href="{{url_for('main.impediment',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> Fill impediment form</button></a>
+    <br><br>
+    <a href="{{url_for('main.attestation',user_id = user.id)}}"> <button type="button" name="button" class="btn btn-warning"> View attestation certificate</button></a>
+  </div>
+
   </div>
 </div>
 {% endblock %}

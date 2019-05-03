@@ -2,7 +2,8 @@ from flask import render_template, request, redirect, url_for, abort
 from . import main
 from .. import db, photos
 from flask_login import login_required, current_user
-from ..models import User, Notice, Certificate, Impediment, Agreement
+from ..models import User, Notice, Certificate, Impediment, Agreement, Witness
+from .forms import UpdateProfile,CivilMarriage
 
 @main.route('/')
 def index():
@@ -271,56 +272,6 @@ def impediment():
 
     return render_template('marriages/impediment.html')
 
-@main.route('/civil_marriage')
-def civil():
-    '''
-    View root page function that returns the civil wedding page and its data
-    '''
-
-    title = 'Civil wedding'
-
-    return render_template('marriages/civil.html')
-
-@main.route('/custoamry_marriage')
-def customary():
-    '''
-    View root page function that returns the customary wedding page and its data
-    '''
-
-    title = 'Customary wedding'
-
-    return render_template('marriages/customary.html')
-
-@main.route('/muslim_marriage')
-def muslim():
-    '''
-    View root page function that returns the muslim wedding page and its data
-    '''
-
-    title = 'Muslim wedding'
-
-    return render_template('marriages/muslim.html')
-
-@main.route('/christian_marriage')
-def christian():
-    '''
-    View root page function that returns the christian wedding page and its data
-    '''
-
-    title = 'Christian wedding'
-
-    return render_template('marriages/christian.html')
-
-@main.route('/hindu_marriage')
-def hindu():
-    '''
-    View root page function that returns the hindu wedding page and its data
-    '''
-
-    title = 'Hindu wedding'
-
-    return render_template('marriages/hindu.html')
-
 @main.route('/About_us')
 def about():
     '''
@@ -381,3 +332,168 @@ def update_pic(user_id):
         user.wife_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile',user_id = user.id))
+
+@main.route('/user/<user_id>/registrar')
+def registrar(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    notice = Notice.query.filter_by(user_id = user.id)
+
+    if user is None:
+        abort(404)
+
+    return render_template("marriages/registrar.html", user = user, notice = notice)
+
+@main.route('/user/<user_id>/attestation')
+def attestation(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    notice = Notice.query.filter_by(user_id = user.id)
+
+    if user is None:
+        abort(404)
+
+    return render_template("marriages/attestation.html", user = user, notice = notice)
+
+@main.route('/user/<user_id>/civil_wedding',methods = ['GET','POST'])
+@login_required
+def civil(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    if user is None:
+        abort(404)
+
+    form = CivilMarriage()
+    witness = Witness()
+
+    if form.validate_on_submit():
+        witness.witness1_name = form.witness1_name.data
+        witness.witness2_name = form.witness2_name.data
+        witness.witness1_id = form.witness1_id.data
+        witness.witness2_id = form.witness2_id.data
+        witness.witness1_dob = form.witness1_dob.data
+        witness.witness2_dob = form.witness2_dob.data
+        witness.user_id = current_user.id
+
+
+        db.session.add(witness)
+        db.session.commit()
+
+        return redirect(url_for('.profile',user_id=user.id))
+
+    title = 'Civil Marriage'
+
+    return render_template('marriages/civil.html',form =form,user=user, title = title)
+
+@main.route('/user/<user_id>/customary_wedding',methods = ['GET','POST'])
+@login_required
+def customary(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    if user is None:
+        abort(404)
+
+    form = CivilMarriage()
+    witness = Witness()
+
+    if form.validate_on_submit():
+        witness.witness1_name = form.witness1_name.data
+        witness.witness2_name = form.witness2_name.data
+        witness.witness1_id = form.witness1_id.data
+        witness.witness2_id = form.witness2_id.data
+        witness.witness1_dob = form.witness1_dob.data
+        witness.witness2_dob = form.witness2_dob.data
+        witness.user_id = current_user.id
+
+
+        db.session.add(witness)
+        db.session.commit()
+
+        return redirect(url_for('.profile',user_id=user.id))
+
+    title = 'Customary Marriage'
+
+    return render_template('marriages/customary.html',form =form,user=user, title = title)
+
+@main.route('/user/<user_id>/islamic_wedding',methods = ['GET','POST'])
+@login_required
+def muslim(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    if user is None:
+        abort(404)
+
+    form = CivilMarriage()
+    witness = Witness()
+
+    if form.validate_on_submit():
+        witness.witness1_name = form.witness1_name.data
+        witness.witness2_name = form.witness2_name.data
+        witness.witness1_id = form.witness1_id.data
+        witness.witness2_id = form.witness2_id.data
+        witness.witness1_dob = form.witness1_dob.data
+        witness.witness2_dob = form.witness2_dob.data
+        witness.user_id = current_user.id
+
+
+        db.session.add(witness)
+        db.session.commit()
+
+        return redirect(url_for('.profile',user_id=user.id))
+
+    title = 'Islamic Marriage'
+
+    return render_template('marriages/muslim.html',form =form,user=user, title = title)
+
+@main.route('/user/<user_id>/christian_wedding',methods = ['GET','POST'])
+@login_required
+def christian(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    if user is None:
+        abort(404)
+
+    form = CivilMarriage()
+    witness = Witness()
+
+    if form.validate_on_submit():
+        witness.witness1_name = form.witness1_name.data
+        witness.witness2_name = form.witness2_name.data
+        witness.witness1_id = form.witness1_id.data
+        witness.witness2_id = form.witness2_id.data
+        witness.witness1_dob = form.witness1_dob.data
+        witness.witness2_dob = form.witness2_dob.data
+        witness.user_id = current_user.id
+
+
+        db.session.add(witness)
+        db.session.commit()
+
+        return redirect(url_for('.profile',user_id=user.id))
+
+    title = 'Christian Marriage'
+
+    return render_template('marriages/christian.html',form =form,user=user, title = title)
+
+@main.route('/user/<user_id>/hindu_wedding',methods = ['GET','POST'])
+@login_required
+def hindu(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    if user is None:
+        abort(404)
+
+    form = CivilMarriage()
+    witness = Witness()
+
+    if form.validate_on_submit():
+        witness.witness1_name = form.witness1_name.data
+        witness.witness2_name = form.witness2_name.data
+        witness.witness1_id = form.witness1_id.data
+        witness.witness2_id = form.witness2_id.data
+        witness.witness1_dob = form.witness1_dob.data
+        witness.witness2_dob = form.witness2_dob.data
+        witness.user_id = current_user.id
+
+
+        db.session.add(witness)
+        db.session.commit()
+
+        return redirect(url_for('.profile',user_id=user.id))
+
+    title = 'Hindu Marriage'
+
+    return render_template('marriages/hindu.html',form =form,user=user, title = title)

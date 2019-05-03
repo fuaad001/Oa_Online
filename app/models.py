@@ -125,3 +125,15 @@ class Agreement(db.Model):
     dowry_agreement = db.Column(db.String(255))
     other_agreements = db.Column(db.String(255))
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
+class Witness(db.Model):
+    __tablename__ = 'witnesses'
+
+    id = db.Column(db.Integer, primary_key = True)
+    witness1_name = db.Column(db.String(255))
+    witness2_name = db.Column(db.String(255))
+    witness1_id = db.Column(db.String(255))
+    witness2_id = db.Column(db.String(255))
+    witness1_dob = db.Column(db.Date())
+    witness2_dob = db.Column(db.Date())
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))

@@ -17,22 +17,22 @@
         <button class="subnavbtn2"><a href="#bring">Civil</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
           <a href="{{url_for('main.notice')}}">Create Notice</a>
-          <a href="{{url_for('main.civil')}}">Conduct Marriage</a>
+          <a href="{{url_for('main.civil',user_id=current_user.id)}}">Conduct Marriage</a>
         </div>
       </div>
       <div class="subnav2">
         <button class="subnavbtn2"><a href="#bring">Religious</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
-          <a href="{{url_for('main.christian')}}">Christian Union</a>
-          <a href="{{url_for('main.muslim')}}">Muslim Union</a>
-          <a href="{{url_for('main.hindu')}}">Hindu Union</a>
+          <a href="{{url_for('main.christian',user_id=current_user.id)}}">Christian Union</a>
+          <a href="{{url_for('main.muslim',user_id=current_user.id)}}">Muslim Union</a>
+          <a href="{{url_for('main.hindu',user_id=current_user.id)}}">Hindu Union</a>
         </div>
       </div>
       <div class="subnav2">
         <button class="subnavbtn2"><a href="#bring">Customary</a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content2">
           <a href="{{url_for('main.notice')}}">Create Notice</a>
-          <a href="{{url_for('main.customary')}}">Conduct Marriage</a>
+          <a href="{{url_for('main.customary',user_id=current_user.id)}}">Conduct Marriage</a>
         </div>
       </div>
     </div>
